@@ -1,15 +1,15 @@
 #!/bin/bash
 
-echo "Производится настройка второго сервера"
+echo "Производится настройка proxy"
 
 echo "Настройка узлов сети..."
 sudo cp hosts /etc/hosts
 
 echo "Настройка имени узла..."
-sudo hostnamectl set-hostname server2
+sudo hostnamectl set-hostname mon-proxy
 
-echo "Настройка интерфейсов"
-sudo cp interfaces2 /etc/network/interfaces
+echo "Настройка интерфейсов..."
+sudo cp interfaces-p /etc/network/interfaces
 sudo systemctl restart networking
 
 echo "Настройка SSH..."
@@ -20,7 +20,7 @@ sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
-echo "Копирование данных SSH..."
+echo "Копирование данных SSH"
 sudo mkdir -p /root/.ssh
 sudo cp authorized_keys /root/.ssh/
 
