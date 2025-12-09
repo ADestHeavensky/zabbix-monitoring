@@ -21,7 +21,7 @@ sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh
 sudo systemctl restart sshd
 
 echo "Копирование данных SSH..."
-sudo mkdir -p ~/.ssh
-sudo cp authorized_keys ~/.ssh/
+sudo mkdir -p /root/.ssh
+sudo cp authorized_keys /root/.ssh/
 
 /bin/bash
