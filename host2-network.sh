@@ -9,7 +9,7 @@ echo "Настройка имени узла..."
 sudo hostnamectl set-hostname host2
 
 echo "Настройка интерфейсов..."
-sudo cp interfaces-h1 /etc/network/interfaces
+sudo cp interfaces-h2 /etc/network/interfaces
 sudo systemctl restart networking
 
 echo "Настройка SSH..."
