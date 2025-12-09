@@ -6,7 +6,7 @@ sudo wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-r
 sudo dpkg -i zabbix-release_latest_7.4+debian12_all.deb
 sudo apt-get update
 sudo apt-get install -y zabbix-agent
-sudo cp zabbix_agentd1.conf /etc/zabbix/zabbix_agentd.conf
+sudo cp zabbix_agentd2.conf /etc/zabbix/zabbix_agentd.conf
 sudo systemctl restart zabbix-agent
 sudo systemctl enable zabbix-agent
 
