@@ -31,9 +31,9 @@ sudo systemctl restart sshd
 
 echo "Копирование данных SSH..."
 sudo mkdir -p ~/.ssh
-sudo cp id_rsa ~/.ssh/
+sudo cp id_rsa /root/.ssh/
 sudo cp id_rsa.pub ~/.ssh/
-sudo touch ~/.ssh/known_hosts
+sudo touch /root/.ssh/known_hosts
 sudo chown root:root ~/.ssh/known_hosts
 
 /bin/bash
