@@ -6,7 +6,7 @@ echo "Настройка узлов сети..."
 sudo cp hosts /etc/hosts
 
 echo "Настройка имени узла..."
-sudo hostnamectl set-hostname mon-proxy
+sudo hostnamectl set-hostname proxy
 
 echo "Настройка интерфейсов..."
 sudo cp interfaces-p /etc/network/interfaces
