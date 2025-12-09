@@ -6,7 +6,7 @@ echo "Настройка узлов сети..."
 sudo cp hosts /etc/hosts
 
 echo "Настройка имени узла..."
-sudo hostnamectl set-hostname server1
+sudo hostnamectl set-hostname server
 
 echo "Настройка интерфейсов..."
 sudo cp interfaces /etc/network/interfaces
