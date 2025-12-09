@@ -20,7 +20,7 @@ sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
-echo "Копирование данных SSH"
+echo "Копирование данных SSH..."
 sudo mkdir -p /root/.ssh
 sudo cp authorized_keys /root/.ssh/
 
