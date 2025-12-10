@@ -39,14 +39,14 @@ ssh root@192.168.2.4 -o StrictHostKeyChecking=accept-new < zabbix-s2.sh
 echo "Запуск кластера и Zabbix server..."
 
 sudo galera_new_cluster
-sudo systemctl restart zabbix-server zabbix-agent apache2
-sudo systemctl enable zabbix-server zabbix-agent apache2
+sudo systemctl restart zabbix-server zabbix-agent nginx
+sudo systemctl enable zabbix-server zabbix-agent nginx
 
 echo "Запуск MariaDB и Zabbix server 2..."
 
 ssh root@192.168.2.4 "sudo systemctl restart mariadb"
-ssh root@192.168.2.4 "sudo systemctl restart zabbix-server zabbix-agent apache2"
-ssh root@192.168.2.4 "sudo systemctl enable zabbix-server zabbix-agent apache2"
+ssh root@192.168.2.4 "sudo systemctl restart zabbix-server zabbix-agent nginx"
+ssh root@192.168.2.4 "sudo systemctl enable zabbix-server zabbix-agent nginx"
 
 
 echo "Подключение к proxy..."
@@ -63,8 +63,8 @@ sudo cp ca.crt /etc/syslog-ng/keys/ca
 sudo cp server.crt /etc/syslog-ng/keys
 sudo cp server.key /etc/syslog-ng/keys
 sudo chown root:root /etc/syslog-ng/keys/ca/ca.crt
-sudo chown root:root /etc/syslog-ng/keys/mon-server.crt
-sudo chown root:root /etc/syslog-ng/keys/mon-server.key
+sudo chown root:root /etc/syslog-ng/keys/server.crt
+sudo chown root:root /etc/syslog-ng/keys/server.key
 sudo ln -s /etc/syslog-ng/keys/ca/ca.crt /etc/syslog-ng/certs/4e83bfff.0
 sudo mkdir -p /var/log/_remote
 sudo systemctl restart syslog-ng
