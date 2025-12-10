@@ -22,9 +22,9 @@ sudo mysql -uroot -p123 -e "create user zabbix@localhost identified by 'password
 sudo mysql -uroot -p123 -e "grant all privileges on zabbix.* to zabbix@localhost;"
 sudo mysql -uroot -p123 -e "set global log_bin_trust_function_creators = 0;"
 
-#echo "Восстановление базы данных сервера..."
+echo "Восстановление базы данных сервера..."
 
-#sudo mysql -uroot -p zabbix < zabbix.SQL
+sudo mysql -uzabbix -ppasword zabbix < zabbix.SQL
 
 echo "Настройка Galera для server1..."
 
