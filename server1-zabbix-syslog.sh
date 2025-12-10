@@ -24,7 +24,7 @@ sudo mysql -uroot -p123 -e "set global log_bin_trust_function_creators = 0;"
 
 echo "Восстановление базы данных сервера..."
 
-sudo mysql -uroot -p zabbix < zabbix.SQL
+#sudo mysql -uroot -p zabbix < zabbix.SQL
 
 echo "Настройка Galera для server1..."
 
@@ -48,11 +48,6 @@ ssh vboxuser@server2 "sudo systemctl restart mariadb"
 ssh vboxuser@server2 "sudo systemctl restart zabbix-server zabbix-agent apache2"
 ssh vboxuser@server2 "sudo systemctl enable zabbix-server zabbix-agent apache2"
 
-
-echo "Подключение к proxy..."
-
-ssh vboxuser@host-proxy -o StrictHostKeyChecking=accept-new < proxy-zabbix.sh
-
 echo "Установка и настройка Syslog-ng для server..."
 
 sudo apt-get install syslog-ng -y
@@ -68,6 +63,10 @@ sudo chown root:root /etc/syslog-ng/keys/server.key
 sudo mkdir -p /var/log/_remote
 sudo systemctl restart syslog-ng
 sudo systemctl enable syslog-ng
+
+echo "Подключение к proxy..."
+
+ssh vboxuser@host-proxy -o StrictHostKeyChecking=accept-new < proxy-zabbix.sh
 
 echo "Подключение к host1..."
 
