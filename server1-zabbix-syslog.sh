@@ -31,22 +31,11 @@ echo "Настройка Galera для server1..."
 sudo systemctl stop mariadb
 sudo cp galera1.cnf /etc/mysql/conf.d/galera.cnf
 
-
-echo "Подключение к server2..."
-
-ssh vboxuser@server2 -o StrictHostKeyChecking=accept-new < server2-zabbix.sh
-
 echo "Запуск кластера и Zabbix server..."
 
 sudo galera_new_cluster
 sudo systemctl restart zabbix-server zabbix-agent apache2
 sudo systemctl enable zabbix-server zabbix-agent apache2
-
-echo "Запуск MariaDB и Zabbix server 2..."
-
-ssh vboxuser@server2 "sudo systemctl restart mariadb"
-ssh vboxuser@server2 "sudo systemctl restart zabbix-server zabbix-agent apache2"
-ssh vboxuser@server2 "sudo systemctl enable zabbix-server zabbix-agent apache2"
 
 echo "Установка и настройка Syslog-ng для server..."
 
@@ -63,15 +52,3 @@ sudo chown root:root /etc/syslog-ng/keys/server.key
 sudo mkdir -p /var/log/_remote
 sudo systemctl restart syslog-ng
 sudo systemctl enable syslog-ng
-
-echo "Подключение к proxy..."
-
-ssh vboxuser@host-proxy -o StrictHostKeyChecking=accept-new < proxy-zabbix.sh
-
-echo "Подключение к host1..."
-
-ssh vboxuser@host1 -o StrictHostKeyChecking=accept-new < host1-zabbix-syslog.sh
-
-echo "Подключение к host2..."
-
-ssh vboxuser@host2 -o StrictHostKeyChecking=accept-new < host2-zabbix-syslog.sh
