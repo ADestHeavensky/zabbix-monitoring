@@ -13,3 +13,7 @@ echo "Установка и настройка MariaDB для server2..."
 sudo apt-get install rsync mariadb-server galera-4 -y
 sudo systemctl stop mariadb
 sudo cp galera2.cnf /etc/mysql/conf.d/galera.cnf
+
+sudo systemctl restart mariadb
+sudo systemctl restart zabbix-server zabbix-agent apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2
