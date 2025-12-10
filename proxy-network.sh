@@ -6,7 +6,7 @@ echo "Настройка узлов сети..."
 sudo cp hosts /etc/hosts
 
 echo "Настройка имени узла..."
-sudo hostnamectl set-hostname proxy
+sudo hostnamectl set-hostname host-proxy
 
 echo "Настройка интерфейсов..."
 sudo cp interfaces-p /etc/network/interfaces
@@ -21,7 +21,7 @@ sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh
 sudo systemctl restart sshd
 
 echo "Копирование данных SSH..."
-sudo mkdir -p /root/.ssh
-sudo cp authorized_keys /root/.ssh/
+sudo mkdir -p ~/.ssh
+sudo cp authorized_keys ~/.ssh/
 
 /bin/bash
