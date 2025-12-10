@@ -18,6 +18,6 @@ sudo mysql -uroot -p123 -e "set global log_bin_trust_function_creators = 0;"
 
 echo "Восстановление базы данных прокси..."
 
-sudo mysql -uroot -p zabbix_proxy < zabbix_proxy.SQL
+sudo mysql -uroot -p zabbix_proxy < zabbix_proxy.sql
 sudo systemctl restart zabbix-proxy
 sudo systemctl enable zabbix-proxy
