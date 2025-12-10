@@ -72,8 +72,8 @@ sudo systemctl enable syslog-ng
 
 echo "Подключение к host1..."
 
-ssh root@192.168.2.2 -o StrictHostKeyChecking=accept-new < host1-zabbix.sh
+ssh root@192.168.2.2 -o StrictHostKeyChecking=accept-new < host1-zabbix-syslog.sh
 
 echo "Подключение к host2..."
 
-ssh root@192.168.2.3 -o StrictHostKeyChecking=accept-new < host2-zabbix.sh
+ssh root@192.168.2.3 -o StrictHostKeyChecking=accept-new < host2-zabbix-syslog.sh
