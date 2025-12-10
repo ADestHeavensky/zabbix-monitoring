@@ -16,7 +16,7 @@ sudo apt-get install syslog-ng -y
 sudo cp syslog-ng2.conf /etc/syslog-ng/syslog-ng.conf
 sudo mkdir -p /etc/syslog-ng/keys
 sudo mkdir -p /etc/syslog-ng/keys/ca
-sudo cp ca.crt /etc/syslog-ng/keys/ca
+sudo cp ca.crt /etc/syslog-ng/keys
 sudo cp host2.crt /etc/syslog-ng/keys
 sudo cp host2.key /etc/syslog-ng/keys
 sudo chown root:root /etc/syslog-ng/keys/ca.crt
