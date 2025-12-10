@@ -24,7 +24,7 @@ sudo mysql -uroot -p123 -e "set global log_bin_trust_function_creators = 0;"
 
 echo "Восстановление базы данных сервера..."
 
-sudo mysql -uroot -p123 zabbix < zabbix.SQL
+sudo mysql -uroot -p zabbix < zabbix.SQL
 
 echo "Настройка Galera для server1..."
 
