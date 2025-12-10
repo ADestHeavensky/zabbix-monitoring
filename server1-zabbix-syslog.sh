@@ -65,7 +65,6 @@ sudo cp server.key /etc/syslog-ng/keys
 sudo chown root:root /etc/syslog-ng/keys/ca/ca.crt
 sudo chown root:root /etc/syslog-ng/keys/server.crt
 sudo chown root:root /etc/syslog-ng/keys/server.key
-sudo ln -s /etc/syslog-ng/keys/ca/ca.crt /etc/syslog-ng/certs/4e83bfff.0
 sudo mkdir -p /var/log/_remote
 sudo systemctl restart syslog-ng
 sudo systemctl enable syslog-ng
