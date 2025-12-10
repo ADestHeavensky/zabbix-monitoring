@@ -39,14 +39,14 @@ ssh root@192.168.2.4 -o StrictHostKeyChecking=accept-new < server2-zabbix.sh
 echo "Запуск кластера и Zabbix server..."
 
 sudo galera_new_cluster
-sudo systemctl restart zabbix-server zabbix-agent nginx
-sudo systemctl enable zabbix-server zabbix-agent nginx
+sudo systemctl restart zabbix-server zabbix-agent apache2
+sudo systemctl enable zabbix-server zabbix-agent apache2
 
 echo "Запуск MariaDB и Zabbix server 2..."
 
 ssh root@192.168.2.4 "sudo systemctl restart mariadb"
-ssh root@192.168.2.4 "sudo systemctl restart zabbix-server zabbix-agent nginx"
-ssh root@192.168.2.4 "sudo systemctl enable zabbix-server zabbix-agent nginx"
+ssh root@192.168.2.4 "sudo systemctl restart zabbix-server zabbix-agent apache2"
+ssh root@192.168.2.4 "sudo systemctl enable zabbix-server zabbix-agent apache2"
 
 
 echo "Подключение к proxy..."
