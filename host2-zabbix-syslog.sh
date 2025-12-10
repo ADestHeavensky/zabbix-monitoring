@@ -22,6 +22,5 @@ sudo cp host2.key /etc/syslog-ng/keys
 sudo chown root:root /etc/syslog-ng/keys/ca.crt
 sudo chown root:root /etc/syslog-ng/keys/host2.crt
 sudo chown root:root /etc/syslog-ng/keys/host2.key
-sudo ln -s /etc/syslog-ng/certs/ca.crt /etc/syslog-ng/keys/4e83bfff.0
 sudo systemctl restart syslog-ng
 sudo systemctl enable syslog-ng
