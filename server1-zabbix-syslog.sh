@@ -34,7 +34,7 @@ sudo cp galera1.cnf /etc/mysql/conf.d/galera.cnf
 
 echo "Подключение к server2..."
 
-ssh root@192.168.2.4 -o StrictHostKeyChecking=accept-new < zabbix-s2.sh
+ssh root@192.168.2.4 -o StrictHostKeyChecking=accept-new < server2-zabbix.sh
 
 echo "Запуск кластера и Zabbix server..."
 
