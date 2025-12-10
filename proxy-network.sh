@@ -9,6 +9,7 @@ echo "Настройка имени узла..."
 sudo hostnamectl set-hostname host-proxy
 
 echo "Настройка интерфейсов..."
+sudo ifdown enp0s3
 sudo cp interfaces-p /etc/network/interfaces
 sudo systemctl restart networking
 
