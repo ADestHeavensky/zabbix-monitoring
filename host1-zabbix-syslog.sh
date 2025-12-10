@@ -19,7 +19,7 @@ sudo mkdir -p /etc/syslog-ng/keys/ca
 sudo cp ca.crt /etc/syslog-ng/keys/ca
 sudo cp host1.crt /etc/syslog-ng/keys
 sudo cp host1.key /etc/syslog-ng/keys
-sudo chown root:root /etc/syslog-ng/keys/ca/ca.crt
+sudo chown root:root /etc/syslog-ng/keys/ca.crt
 sudo chown root:root /etc/syslog-ng/keys/host1.crt
 sudo chown root:root /etc/syslog-ng/keys/host1.key
 sudo ln -s /etc/syslog-ng/certs/ca.crt /etc/syslog-ng/keys/4e83bfff.0
